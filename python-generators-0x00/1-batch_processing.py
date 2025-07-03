@@ -1,4 +1,3 @@
-import sys
 import seed
 import mysql.connector
 
