@@ -62,7 +62,7 @@ def insert_data(connection, data):
             reader = csv.DictReader(user_data)
             for data in reader:
                 user_id = str(uuid.uuid4())
-                cursor.execute(f"SELECT COUNT(*) FROM {TABLE_NAME} WHERE email = %s", (data['email'],))
+                cursor.execute(f"SELECT 1 FROM {TABLE_NAME} WHERE email = %s", (data['email'],))
                 if not cursor.fetchone():
                     cursor.execute(f"""
                         INSERT INTO {TABLE_NAME} (user_id, name, email, age)
