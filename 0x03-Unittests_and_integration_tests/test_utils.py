@@ -50,11 +50,11 @@ class TestGetJson(unittest.TestCase):
 
 class TestMemoize(unittest.TestCase):
     """Unit test for memoize"""
+    
     def test_memoize(self):
         """Ensure memoize caches result and calls themethod once"""
         
         class TestClass:
-
             def a_method(self):
                 return 42
 
