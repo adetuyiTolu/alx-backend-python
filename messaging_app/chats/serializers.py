@@ -14,9 +14,14 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class MessageSerializer(serializers.ModelSerializer):
+    sender_name = serializers.SerializerMethodField()
+
     class Meta:
         model = Message
         fields = ['id', 'sender', 'message_body', 'sent_at']
+
+    def get_sender_email(self, obj):
+        return obj.sender.email
 
 
 class ConversationSerializer(serializers.ModelSerializer):
@@ -27,3 +32,9 @@ class ConversationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Conversation
         fields = ['id', 'participants', 'created_at', 'messages']
+
+    def validate_participants(self, value):
+        if len(value) < 2:
+            raise serializers.ValidationError(
+                "A conversation must have at least two participants.")
+        return value
