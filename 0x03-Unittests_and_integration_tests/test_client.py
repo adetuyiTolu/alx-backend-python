@@ -50,7 +50,8 @@ class TestGithubOrgClient(unittest.TestCase):
         ]
         mock_get.return_value = expected_payload
 
-        with patch("client.GithubOrgClient._public_repos_url", new_callable=PropertyMock) as mock_url:
+        with patch("client.GithubOrgClient._public_repos_url",
+                   new_callable=PropertyMock) as mock_url:
             client = GithubOrgClient("google")
             result = client.public_repos()
 
