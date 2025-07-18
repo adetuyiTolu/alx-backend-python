@@ -37,16 +37,16 @@ class TestGetJson(unittest.TestCase):
          ("test_example", "http://example.com", {"payload": True}),
         ("test_holberton", "http://holberton.io", {"payload": False})
      ])
-     @patch("utils.requests.get")
-     def test_get_json(self,name,test_url,test_payload,mock_get):
+     def test_get_json(self,name,test_url,test_payload):
          """Test that get_json returns expected JSON payload."""
          mock_response = Mock()
          mock_response.json.return_value = test_payload
-         mock_get.return_value = mock_response
          
-         result = get_json(test_url)
-         mock_get.assert_called_once_with(test_url)
-         self.assertEqual(result,test_payload)
+         with patch('requests.get') as mock_get:
+            mock_get.return_value = mock_response
+            result = get_json(test_url)
+            mock_get.assert_called_once_with(test_url)
+            self.assertEqual(result, test_payload)
 
 
 if __name__ == "__main__":
