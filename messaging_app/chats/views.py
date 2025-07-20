@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from django.shortcuts import get_object_or_404
 
-from .models import Conversation, Message, CustomUser
+from .models import Conversation, Message, CustomUserManager
 from .serializers import ConversationSerializer, MessageSerializer
 
 
@@ -24,7 +24,8 @@ class ConversationViewSet(viewsets.ModelViewSet):
         if not participants_ids or not isinstance(participants_ids, list):
             return Response({"error": "Participants list is required."}, status=status.HTTP_400_BAD_REQUEST)
 
-        participants = CustomUser.objects.filter(user_id__in=participants_ids)
+        participants = CustomUserManager.objects.filter(
+            user_id__in=participants_ids)
         if not participants.exists():
             return Response({"error": "Invalid participant(s)."}, status=status.HTTP_400_BAD_REQUEST)
 

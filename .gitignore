@@ -1,3 +1,6 @@
 python-decorators-0x01/users.db
 /0x03-Unittests_and_integration_tests/__pycache__
 .DS_Store
+/messaging_app/chats/migrations/__pycache__
+/messaging_app/messaging_app/__pycache__
+__pycache__
