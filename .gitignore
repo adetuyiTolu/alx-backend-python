@@ -4,3 +4,5 @@ python-decorators-0x01/users.db
 /messaging_app/chats/migrations/__pycache__
 /messaging_app/messaging_app/__pycache__
 __pycache__
+messaging_app/db.sqlite3
+messaging_app/db.sqlite3
