@@ -24,3 +24,372 @@ Hour is: 16
 Hour is: 16
 /Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
 /Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/messaging_app/settings.py changed, reloading.
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/messaging_app/settings.py changed, reloading.
+2025-07-27 17:02:07.852473 - User: tolu@gmail.com - Path: /api/conversations/
+Forbidden: /api/conversations/
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:03:05.583263 - User: tolu@gmail.com - Path: /api/conversations/
+Forbidden: /api/conversations/
+2025-07-27 17:03:07.429447 - User: tolu@gmail.com - Path: /api/conversations/
+Forbidden: /api/conversations/
+2025-07-27 17:03:11.018908 - User: tolu@gmail.com - Path: /api/conversations/
+Forbidden: /api/conversations/
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:04:13.801482 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+Forbidden: /api/conversations/
+2025-07-27 17:04:14.901443 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+Forbidden: /api/conversations/
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:07:21.266193 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+Forbidden: /api/conversations/
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:08:50.016855 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:08:59.321541 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:00.151241 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:00.735109 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:01.192741 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:01.624250 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:02.007616 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:02.358755 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:02.748847 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:03.123842 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:03.472254 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:03.869304 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:04.271001 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:04.658054 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:05.022398 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:05.387916 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:05.775363 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:06.145459 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:06.555407 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:06.967981 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:07.348571 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:07.782939 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:08.190865 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:08.597379 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:09.007213 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:09.367835 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:09.717715 - User: tolu@gmail.com - Path: /api/conversations/
+hour is: 17
+2025-07-27 17:09:24.409556 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:26.086778 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:26.439756 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:26.739435 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:27.030464 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:27.305763 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:27.585616 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:27.848847 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:28.109980 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:28.384111 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:28.635596 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:28.886712 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:29.129684 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:29.394499 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:29.652705 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:29.920674 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:30.187930 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:30.437898 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:30.670172 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:30.919533 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:31.170051 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:31.394059 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:31.637079 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:31.884218 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:32.154115 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+2025-07-27 17:09:32.381781 - User: tolu@gmail.com - Path: /api/messages/
+hour is: 17
+Not Found: /api/messages/
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:10:39.052808 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:44.207923 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:44.717043 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:45.082822 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:45.454328 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:45.782855 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:46.058655 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:46.329024 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:46.603540 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:46.885953 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:47.165836 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:47.419661 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:47.706936 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:48.011344 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:48.708161 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:48.972863 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:49.267238 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:49.495256 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:49.734554 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:49.953711 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:50.378204 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:50.641196 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:50.888993 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:51.619465 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:51.937455 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:52.187331 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:52.507701 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:52.821502 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:53.153837 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:53.479250 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:53.793037 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:54.056813 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:54.354337 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:54.619244 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:54.902544 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:55.207435 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:55.512317 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:55.783482 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:56.100310 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:56.358316 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:56.599159 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:56.872429 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:57.157777 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:57.425068 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:57.675077 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:57.930623 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:58.199888 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:58.484354 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:58.716119 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:59.011782 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:10:59.243247 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:14:09.817120 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:14:10.304230 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:14:10.551074 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:14:10.762579 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:14:10.992886 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:14:11.209231 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:14:11.432021 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:14:28.886765 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:14:29.808530 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:14:30.185292 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:14:30.484486 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:14:30.796122 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:16:11.457616 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+Internal Server Error: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+Traceback (most recent call last):
+  File "/Users/toluadetuyi/Documents/GitHub/alx-backend-python/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py", line 53, in __call__
+    if request.method == 'GET' and request.path.contains('messages'):
+                                   ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'contains'
+2025-07-27 17:16:12.663373 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+Internal Server Error: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+Traceback (most recent call last):
+  File "/Users/toluadetuyi/Documents/GitHub/alx-backend-python/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py", line 53, in __call__
+    if request.method == 'GET' and request.path.contains('messages'):
+                                   ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'contains'
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:17:24.580773 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+length is:0
+2025-07-27 17:17:26.637240 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+length is:1
+2025-07-27 17:17:26.919023 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+length is:2
+2025-07-27 17:17:27.148556 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+length is:3
+2025-07-27 17:17:27.381553 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+length is:4
+2025-07-27 17:17:27.635974 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+length is:5
+Too Many Requests: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+2025-07-27 17:17:27.878402 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+length is:5
+Too Many Requests: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:17:55.012053 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:19:48.083078 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:19:49.166935 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:19:49.366342 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:19:49.550514 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:19:49.736823 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:19:49.937677 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:20:36.499196 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:20:37.264043 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:20:37.492855 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:20:37.750327 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:20:37.964122 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:20:38.230905 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+Forbidden: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+2025-07-27 17:20:38.501735 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+Forbidden: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:21:02.945045 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/messaging_app/settings.py changed, reloading.
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/urls.py changed, reloading.
