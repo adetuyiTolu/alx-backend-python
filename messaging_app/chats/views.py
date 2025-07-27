@@ -11,7 +11,7 @@ from .filters import MessageFilter
 from .pagination import MessagePagination
 from .permissions import IsParticipantOfConversation
 
-from .models import Conversation, Message, CustomUserManager
+from .models import Conversation, Message, CustomUserManager, User
 from .serializers import ConversationSerializer, MessageSerializer
 
 
@@ -30,8 +30,8 @@ class ConversationViewSet(viewsets.ModelViewSet):
         if not participants_ids or not isinstance(participants_ids, list):
             return Response({"error": "Participants list is required."}, status=status.HTTP_400_BAD_REQUEST)
 
-        participants = CustomUserManager.objects.filter(
-            user_id__in=participants_ids)
+        participants = User.objects.filter(
+            id__in=participants_ids)
         if not participants.exists():
             return Response({"error": "Invalid participant(s)."}, status=status.HTTP_400_BAD_REQUEST)
 

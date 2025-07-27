@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "9089de3c-eb3d-49e4-9b39-944105562be3",
+		"name": "Messaging App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26525911",
+		"_collection_link": "https://myidentitypay.postman.co/workspace/IdentityPass-Workspace~9059853b-976c-477c-8699-3cc974400afc/collection/26525911-9089de3c-eb3d-49e4-9b39-944105562be3?action=share&source=collection_link&creator=26525911"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Get Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"tolu.adetuyi@gmail.com\",\n    \"password\": \"Password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MzY5NDExMCwiaWF0IjoxNzUzNjA3NzEwLCJqdGkiOiJiYmU2YzYyZTI2ZDM0ODc0ODVjZjMwMzgyNjdkNGQ1OCIsInVzZXJfaWQiOiJlZGQwZDRjZC0yMDY3LTQ0ZjAtOTg2Ni0zNDVmODJlNWI1NTgifQ.ChwNWLe076kg8a_sQ0Pq39tMsdYSfeMeHTcF89LGtJ8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Conversation",
+			"item": [
+				{
+					"name": "Create Conversations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzNjExNzAwLCJpYXQiOjE3NTM2MDgxMDAsImp0aSI6IjY5OTE2NTllNmFhNDRjNGJhZGZlNTZlNmU5Y2Q4MDk0IiwidXNlcl9pZCI6ImVkZDBkNGNkLTIwNjctNDRmMC05ODY2LTM0NWY4MmU1YjU1OCJ9.6ubOO1V6dXxYWZ-fR3sWfpTfh23cWIUIq1C113deDik",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/conversations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"conversations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Conversations",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzNjExNzAwLCJpYXQiOjE3NTM2MDgxMDAsImp0aSI6IjY5OTE2NTllNmFhNDRjNGJhZGZlNTZlNmU5Y2Q4MDk0IiwidXNlcl9pZCI6ImVkZDBkNGNkLTIwNjctNDRmMC05ODY2LTM0NWY4MmU1YjU1OCJ9.6ubOO1V6dXxYWZ-fR3sWfpTfh23cWIUIq1C113deDik",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"participants\": [\"4400dbd9475f45599414aa1358e49072\", \"edd0d4cd206744f09866345f82e5b558\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/conversations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"conversations",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "List Conversation Messages",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzNjExNzAwLCJpYXQiOjE3NTM2MDgxMDAsImp0aSI6IjY5OTE2NTllNmFhNDRjNGJhZGZlNTZlNmU5Y2Q4MDk0IiwidXNlcl9pZCI6ImVkZDBkNGNkLTIwNjctNDRmMC05ODY2LTM0NWY4MmU1YjU1OCJ9.6ubOO1V6dXxYWZ-fR3sWfpTfh23cWIUIq1C113deDik",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/conversations/{conversation_id}/messages/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"conversations",
+								"09c7081a-5155-4491-ab8a-514713f9fd85",
+								"messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Conversation Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzNjExNzAwLCJpYXQiOjE3NTM2MDgxMDAsImp0aSI6IjY5OTE2NTllNmFhNDRjNGJhZGZlNTZlNmU5Y2Q4MDk0IiwidXNlcl9pZCI6ImVkZDBkNGNkLTIwNjctNDRmMC05ODY2LTM0NWY4MmU1YjU1OCJ9.6ubOO1V6dXxYWZ-fR3sWfpTfh23cWIUIq1C113deDik",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"conversation\": \"09c7081a-5155-4491-ab8a-514713f9fd85\",\n    \"message_body\": \"Hello world!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/conversations/{conversation_id}/messages/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"conversations",
+								"09c7081a-5155-4491-ab8a-514713f9fd85",
+								"messages",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
