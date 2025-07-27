@@ -72,3 +72,18 @@ class OffensiveLanguageMiddleware:
         if x_forwarded_for:
             return x_forwarded_for.split(',')[0].strip()
         return request.META.get('REMOTE_ADDR', '')
+
+
+class RolePermissionMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+        self.allowed_roles = ['admin', 'moderator']
+
+    def __call__(self, request):
+        user = request.user
+
+        if request.path.startswith('/admin/') and user.role not in self.allowed_roles:
+            return HttpResponseForbidden("You don't have permission to access this page.")
+        return self.get_response(request)
+
+        return self.get_response(request)

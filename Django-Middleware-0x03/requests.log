@@ -393,3 +393,19 @@ hour is: 17
 /Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/messaging_app/settings.py changed, reloading.
 /Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
 /Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/urls.py changed, reloading.
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/messaging_app/settings.py changed, reloading.
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/messaging_app/settings.py changed, reloading.
+2025-07-27 17:27:34.483911 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+Forbidden: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+2025-07-27 17:30:24.231944 - User: tolu@gmail.com - Path: /api/conversations/09c7081a-5155-4491-ab8a-514713f9fd85/messages/
+hour is: 17
+2025-07-27 17:30:37.367573 - User: tolu@gmail.com - Path: /admin/
+hour is: 17
+Forbidden: /admin/
+2025-07-27 17:30:38.513947 - User: tolu@gmail.com - Path: /admin/
+hour is: 17
+Forbidden: /admin/
