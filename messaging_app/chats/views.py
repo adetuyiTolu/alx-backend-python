@@ -4,6 +4,7 @@ from rest_framework import viewsets, status, filters
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from django.shortcuts import get_object_or_404
+from .permissions import IsOwnerOrParticipant
 
 from .models import Conversation, Message, CustomUserManager
 from .serializers import ConversationSerializer, MessageSerializer
@@ -12,7 +13,7 @@ from .serializers import ConversationSerializer, MessageSerializer
 class ConversationViewSet(viewsets.ModelViewSet):
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsOwnerOrParticipant]
 
     def get_queryset(self):
         """Return only conversations the current user is part of."""
@@ -41,7 +42,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
 class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsOwnerOrParticipant]
     filter_backends = [filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = ['sent_at']
     search_fields = ['message_body']
