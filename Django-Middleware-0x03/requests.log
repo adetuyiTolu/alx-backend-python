@@ -410,3 +410,4 @@ Forbidden: /admin/
 hour is: 17
 Forbidden: /admin/
 /Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/chats/middleware.py changed, reloading.
+/Users/toluadetuyi/Documents/GitHub/alx-backend-python/Django-Middleware-0x03/messaging_app/settings.py changed, reloading.
