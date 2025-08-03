@@ -13,13 +13,11 @@ def delete_user(request):
 
 @login_required
 def inbox(request):
-    messages = (
-        Message.objects
-        .filter(receiver=request.user, parent_message__isnull=True)
-        .select_related('sender', 'receiver')
-        .prefetch_related('replies')  # replies is the related_name
-        .order_by('-timestamp')
-    )
+
+    messages = Message.objects.filter(
+        sender=request.user) | Message.objects.filter(receiver=request.user)
+    messages = messages.select_related(
+        'sender', 'receiver').order_by('-timestamp')
 
     threads = []
     for msg in messages:
