@@ -1,0 +1,7 @@
+<h2>Your Messages</h2>
+{% for thread in threads %}
+  <div style="margin-bottom: 20px;">
+    <strong>{{ thread.message.sender.username }}:</strong> {{ thread.message.content }}
+    {% include 'messaging/thread.html' with replies=thread.replies %}
+  </div>
+{% endfor %}

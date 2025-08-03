@@ -1,0 +1,6 @@
+{% for reply in replies %}
+  <div style="margin-left: 20px; margin-top: 10px;">
+    <strong>{{ reply.message.sender.username }}:</strong> {{ reply.message.content }}
+    {% include 'messaging/thread.html' with replies=reply.replies %}
+  </div>
+{% endfor %}
