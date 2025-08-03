@@ -29,6 +29,14 @@ def inbox(request):
     return render(request, 'messaging/inbox.html', {'threads': threads})
 
 
+@login_required
+def unread_inbox(request):
+
+    unread_messages = Message.unread.for_user(request.user)
+
+    return render(request, 'messaging/unread_inbox.html', {'messages': unread_messages})
+
+
 def get_thread(message):
     thread = []
     for reply in message.replies.all().order_by('timestamp'):
