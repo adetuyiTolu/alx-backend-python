@@ -1,3 +1,5 @@
+from django.views.decorators.cache import cache_page
+from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
@@ -47,3 +49,10 @@ def get_thread(message):
             'replies': get_thread(reply)
         })
     return thread
+
+
+@cache_page(60)  # Cache this view for 60 seconds
+def conversation_view(request, conversation_id):
+    messages = Message.objects.filter(
+        conversation_id=conversation_id).order_by('timestamp')
+    return render(request, 'messaging/conversation.html', {'messages': messages})
