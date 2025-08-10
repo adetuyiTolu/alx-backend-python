@@ -6,3 +6,4 @@ python-decorators-0x01/users.db
 __pycache__
 messaging_app/db.sqlite3
 messaging_app/db.sqlite3
+messaging_app/.env
