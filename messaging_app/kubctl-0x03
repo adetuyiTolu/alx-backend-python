@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Apply the updated deployment
+kubectl apply -f blue_deployment.yaml
+
+# Trigger rollout and wait for it to complete
+kubectl rollout status deployment/messaging-app
+
+# Fetch the service type
+SERVICE_TYPE=$(kubectl get svc messaging-service -o jsonpath='{.spec.type}')
+
+# Determine the external URL to test
+if [ "$SERVICE_TYPE" == "LoadBalancer" ]; then
+    EXTERNAL_IP=""
+    # Wait until EXTERNAL-IP is assigned
+    while [ -z "$EXTERNAL_IP" ] || [ "$EXTERNAL_IP" == "<pending>" ]; do
+        echo "Waiting for external IP..."
+        sleep 5
+        EXTERNAL_IP=$(kubectl get svc messaging-service -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+    done
+    URL="http://$EXTERNAL_IP:8000"
+elif [ "$SERVICE_TYPE" == "NodePort" ]; then
+    NODE_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="InternalIP")].address}')
+    NODE_PORT=$(kubectl get svc messaging-service -o jsonpath='{.spec.ports[0].nodePort}')
+    URL="http://$NODE_IP:$NODE_PORT"
+else
+    echo "ClusterIP service. Use port-forwarding for testing."
+    exit 1
+fi
+
+echo "Testing app at $URL"
+
+# Continuous curl test for downtime
+for i in {1..10}; do
+    curl -s -o /dev/null -w "%{http_code}\n" $URL
+    sleep 2
+done
+
+# Verify pods
+kubectl get pods
