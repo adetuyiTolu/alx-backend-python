@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Name of the deployment
+DEPLOYMENT_NAME="messaging-app"
+
+# Namespace (default if none)
+NAMESPACE="default"
+
+echo "Scaling deployment $DEPLOYMENT_NAME to 3 replicas..."
+kubectl scale deployment $DEPLOYMENT_NAME --replicas=3 -n $NAMESPACE
+
+echo "Waiting for pods to be ready..."
+kubectl rollout status deployment/$DEPLOYMENT_NAME -n $NAMESPACE
+
+echo "Listing all pods:"
+kubectl get pods -n $NAMESPACE
+
+# Load testing using wrk (assuming wrk is installed)
+APP_SERVICE="messaging-app-service" # replace with your Service name if different
+APP_PORT=8000                        # replace with your app port
+
+if command -v wrk >/dev/null 2>&1; then
+    echo "Running load test on http://$APP_SERVICE:$APP_PORT ..."
+    wrk -t2 -c5 -d10s http://$APP_SERVICE:$APP_PORT/
+else
+    echo "wrk not installed, skipping load test. Install wrk to perform load testing."
+fi
+
+echo "Checking resource usage of pods:"
+kubectl top pods -n $NAMESPACE
