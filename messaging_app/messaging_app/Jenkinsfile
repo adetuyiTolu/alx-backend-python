@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.11-slim'  // Use official Python image
-            args '-u root:root'       // Run as root so pip can install packages
-        }
-    }
+    agent any
 
     environment {
         DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials')  // Jenkins credential ID
