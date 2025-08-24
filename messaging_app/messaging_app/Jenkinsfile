@@ -12,7 +12,7 @@ pipeline {
         IMAGE_NAME = 'slimzy29/messaging_app-web'
 
         // Injected from Jenkins credentials
-        SECRET_KEY = credentials('django-secret')
+        //SECRET_KEY = credentials('django-secret')
         DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials')
     }
 
