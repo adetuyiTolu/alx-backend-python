@@ -9,7 +9,7 @@ pipeline {
         ALLOWED_HOSTS = '127.0.0.1,localhost'
         MESSAGE_DEFAULT_DAYS = '7'
         REGISTRY_URL = 'https://index.docker.io/v1/'
-        IMAGE_NAME = 'slimzy29/messaging_app'
+        IMAGE_NAME = 'slimzy29/messaging_app-web'
 
         // Injected from Jenkins credentials
         //SECRET_KEY = credentials('django-secret')
