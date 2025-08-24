@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials')  // Jenkins credential ID
+        DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials')
         DOCKER_IMAGE = "slimzy29/messaging_app-web"
         BRANCH_NAME = "main"
     }
@@ -16,50 +16,35 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Run in Python Docker') {
             steps {
-                sh 'pip install --upgrade pip'
-                sh 'pip install -r messaging_app/requirements.txt'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                sh 'pytest --maxfail=1 --disable-warnings -q --junitxml=pytest-report.xml'
-            }
-            post {
-                always {
-                    junit 'pytest-report.xml'
-                }
+                sh """
+                    docker run --rm -v \$PWD:/app -w /app python:3.11-slim \
+                    bash -c "pip install --upgrade pip && pip install -r messaging_app/requirements.txt && pytest --maxfail=1 --disable-warnings -q --junitxml=pytest-report.xml"
+                """
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    sh "docker build -t ${DOCKER_IMAGE}:${BUILD_NUMBER} ."
-                }
+                sh "docker build -t ${DOCKER_IMAGE}:${BUILD_NUMBER} ."
             }
         }
 
         stage('Push Docker Image') {
             steps {
-                script {
-                    sh "echo $DOCKER_HUB_CREDENTIALS_PSW | docker login -u $DOCKER_HUB_CREDENTIALS_USR --password-stdin"
-                    sh "docker push ${DOCKER_IMAGE}:${BUILD_NUMBER}"
-                    sh "docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} ${DOCKER_IMAGE}:latest"
-                    sh "docker push ${DOCKER_IMAGE}:latest"
-                }
+                sh """
+                    echo $DOCKER_HUB_CREDENTIALS_PSW | docker login -u $DOCKER_HUB_CREDENTIALS_USR --password-stdin
+                    docker push ${DOCKER_IMAGE}:${BUILD_NUMBER}
+                    docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} ${DOCKER_IMAGE}:latest
+                    docker push ${DOCKER_IMAGE}:latest
+                """
             }
         }
     }
 
     post {
-        success {
-            echo "✅ Build and Push Successful!"
-        }
-        failure {
-            echo "❌ Build Failed. Check logs."
-        }
+        success { echo "✅ Docker image build and push successful!" }
+        failure { echo "❌ Build failed. Check logs." }
     }
 }
