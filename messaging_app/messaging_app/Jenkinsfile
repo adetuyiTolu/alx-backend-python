@@ -2,49 +2,63 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_CREDENTIALS = credentials('github-credentials')
-        PYTHON = 'python3'
+        DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials')  // Add in Jenkins > Credentials
+        DOCKER_IMAGE = "slimzy29/messaging_app-web"
+        BRANCH_NAME = "main"
     }
 
     stages {
-        stage('Checkout') {
+        stage('Checkout Code') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/YOUR_USERNAME/YOUR_REPO.git',
-                    credentialsId: "${GITHUB_CREDENTIALS}"
+                git branch: "${BRANCH_NAME}", 
+                    credentialsId: 'github-credentials',  // Add this in Jenkins
+                    url: 'https://github.com/adetuyiTolu/alx-backend-python.git'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh '''
-                    ${PYTHON} -m venv venv
-                    source venv/bin/activate
-                    pip3 install --upgrade pip
-                    pip3 install -r messaging_app/requirements.txt
-                    pip3 install pytest pytest-html
-                '''
+                sh 'pip3 install -r messaging_app/requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh '''
-                    source venv/bin/activate
-                    cd messaging_app
-                    pytest --junitxml=report.xml --html=report.html --self-contained-html
-                '''
+                sh 'pytest --maxfail=1 --disable-warnings -q --junitxml=pytest-report.xml'
             }
             post {
                 always {
-                    junit 'messaging_app/report.xml'
-                    archiveArtifacts artifacts: 'messaging_app/report.html', fingerprint: true
+                    junit 'pytest-report.xml'
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    sh "docker build -t ${DOCKER_IMAGE}:${BUILD_NUMBER} ."
+                }
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    sh "echo $DOCKER_HUB_CREDENTIALS_PSW | docker login -u $DOCKER_HUB_CREDENTIALS_USR --password-stdin"
+                    sh "docker push ${DOCKER_IMAGE}:${BUILD_NUMBER}"
+                    sh "docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} ${DOCKER_IMAGE}:latest"
+                    sh "docker push ${DOCKER_IMAGE}:latest"
                 }
             }
         }
     }
 
-    triggers {
-        // Manual trigger only – run from Jenkins UI
+    post {
+        success {
+            echo "✅ Build and Push Successful!"
+        }
+        failure {
+            echo "❌ Build Failed. Check logs."
+        }
     }
 }
