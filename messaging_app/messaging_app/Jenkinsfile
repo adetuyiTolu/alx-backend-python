@@ -36,14 +36,6 @@ pipeline {
             }
         }
 
-        stage('Migrate Database') {
-            steps {
-                sh '''
-                    "$VENV/bin/python" messaging_app/manage.py migrate --noinput
-                '''
-            }
-        }
-
         stage('Run Tests') {
             steps {
                 sh '''
