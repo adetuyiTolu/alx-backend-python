@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+
+    environment {
+        GITHUB_CREDENTIALS = credentials('github-credentials')
+        PYTHON = 'python'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/YOUR_USERNAME/YOUR_REPO.git',
+                    credentialsId: "${GITHUB_CREDENTIALS}"
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh '''
+                    ${PYTHON} -m venv venv
+                    source venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
+                    pip install pytest pytest-html
+                '''
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh '''
+                    source venv/bin/activate
+                    pytest --junitxml=report.xml --html=report.html --self-contained-html
+                '''
+            }
+            post {
+                always {
+                    junit 'report.xml'
+                    archiveArtifacts artifacts: 'report.html', fingerprint: true
+                }
+            }
+        }
+    }
+
+    triggers {
+        // manual trigger only – no cron or webhook
+    }
+}
