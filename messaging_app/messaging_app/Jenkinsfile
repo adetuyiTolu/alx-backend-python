@@ -1,8 +1,13 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python:3.11-slim'  // Use official Python image
+            args '-u root:root'       // Run as root so pip can install packages
+        }
+    }
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials')  // Add in Jenkins > Credentials
+        DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials')  // Jenkins credential ID
         DOCKER_IMAGE = "slimzy29/messaging_app-web"
         BRANCH_NAME = "main"
     }
@@ -11,14 +16,15 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: "${BRANCH_NAME}", 
-                    credentialsId: 'github-credentials',  // Add this in Jenkins
+                    credentialsId: 'github-credentials',
                     url: 'https://github.com/adetuyiTolu/alx-backend-python.git'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'pip3 install -r messaging_app/requirements.txt'
+                sh 'pip install --upgrade pip'
+                sh 'pip install -r messaging_app/requirements.txt'
             }
         }
 
