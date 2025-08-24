@@ -1,50 +1,100 @@
 pipeline {
     agent any
-
+    
     environment {
+        VENV = "${WORKSPACE}/venv"
+        APP_ENV = 'development'
+        DEBUG = 'True'
+        DJANGO_SETTINGS_MODULE = 'messaging_app.settings'
+        ALLOWED_HOSTS = '127.0.0.1,localhost'
+        MESSAGE_DEFAULT_DAYS = '7'
+        REGISTRY_URL = 'https://index.docker.io/v1/'
+        IMAGE_NAME = 'slimzy29/messaging_app-web'
+
+        // Injected from Jenkins credentials
+        SECRET_KEY = credentials('django-secret')
         DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials')
-        DOCKER_IMAGE = "slimzy29/messaging_app-web"
-        BRANCH_NAME = "main"
     }
 
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: "${BRANCH_NAME}", 
-                    credentialsId: 'github-credentials',
-                    url: 'https://github.com/adetuyiTolu/alx-backend-python.git'
+                git branch: 'main', credentialsId: 'github-credentials', url: 'https://github.com/adetuyiTolu/alx-backend-python.git'
             }
         }
 
-        stage('Run in Python Docker') {
+        stage('Set up Python Environment') {
             steps {
-                sh """
-                    docker run --rm -v \$PWD:/app -w /app python:3.11-slim \
-                    bash -c "pip install --upgrade pip && pip install -r messaging_app/requirements.txt && pytest --maxfail=1 --disable-warnings -q --junitxml=pytest-report.xml"
-                """
+                sh '''
+                    python3 -m venv "$VENV"
+                    "$VENV/bin/pip" install --upgrade pip
+                '''
+                dir('messaging_app') {
+                    sh '''
+                        source $VENV/bin/activate
+                        "$VENV/bin/pip" install -r requirements.txt
+                        "$VENV/bin/pip" install pytest pytest-django pytest-html pytest-cov
+                    '''
+                }
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Migrate Database') {
             steps {
-                sh "docker build -t ${DOCKER_IMAGE}:${BUILD_NUMBER} ."
+                dir('messaging_app') {
+                    sh '''
+                        "$VENV/bin/python" manage.py migrate --noinput
+                    '''
+                }
             }
         }
 
-        stage('Push Docker Image') {
+        stage('Run Tests') {
             steps {
-                sh """
-                    echo $DOCKER_HUB_CREDENTIALS_PSW | docker login -u $DOCKER_HUB_CREDENTIALS_USR --password-stdin
-                    docker push ${DOCKER_IMAGE}:${BUILD_NUMBER}
-                    docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} ${DOCKER_IMAGE}:latest
-                    docker push ${DOCKER_IMAGE}:latest
-                """
+                dir('messaging_app') {
+                    sh '''
+                        mkdir -p test-reports
+                        "$VENV/bin/pytest" \
+                            --ds=messaging_app.settings \
+                            --junitxml=test-reports/report.xml \
+                            --html=test-reports/report.html --self-contained-html tests
+                    '''
+                }
+            }
+        }
+
+        stage('Publish Reports') {
+            steps {
+                dir('messaging_app') {
+                    junit 'test-reports/report.xml'
+                    publishHTML([
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'test-reports',
+                        reportFiles: 'report.html',
+                        reportName: 'Pytest HTML Report'
+                    ])
+                }
+            }
+        }
+
+        stage('Docker Build and Push') {
+            steps {
+                script {
+                    docker.withRegistry(env.REGISTRY_URL, 'docker-credentials') {
+                        def appImage = docker.build(IMAGE_NAME)
+                        appImage.push("${env.BUILD_NUMBER}")
+                        appImage.push("latest")
+                    }
+                }
             }
         }
     }
 
     post {
-        success { echo "✅ Docker image build and push successful!" }
-        failure { echo "❌ Build failed. Check logs." }
+        always {
+            sh 'rm -rf "$VENV" || true'
+        }
     }
 }
