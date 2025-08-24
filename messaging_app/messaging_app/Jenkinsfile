@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         GITHUB_CREDENTIALS = credentials('github-credentials')
-        PYTHON = 'python'
+        PYTHON = 'python3'
     }
 
     stages {
@@ -20,9 +20,9 @@ pipeline {
                 sh '''
                     ${PYTHON} -m venv venv
                     source venv/bin/activate
-                    pip install --upgrade pip
-                    pip install -r requirements.txt
-                    pip install pytest pytest-html
+                    pip3 install --upgrade pip
+                    pip3 install -r messaging_app/requirements.txt
+                    pip3 install pytest pytest-html
                 '''
             }
         }
@@ -31,19 +31,20 @@ pipeline {
             steps {
                 sh '''
                     source venv/bin/activate
+                    cd messaging_app
                     pytest --junitxml=report.xml --html=report.html --self-contained-html
                 '''
             }
             post {
                 always {
-                    junit 'report.xml'
-                    archiveArtifacts artifacts: 'report.html', fingerprint: true
+                    junit 'messaging_app/report.xml'
+                    archiveArtifacts artifacts: 'messaging_app/report.html', fingerprint: true
                 }
             }
         }
     }
 
     triggers {
-        // manual trigger only – no cron or webhook
+        // Manual trigger only – run from Jenkins UI
     }
 }
