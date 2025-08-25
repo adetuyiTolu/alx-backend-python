@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python:3.11'
+        }
+    }
 
     environment {
         VENV = "${WORKSPACE}/venv"
@@ -25,24 +29,16 @@ pipeline {
             }
         }
         
-        // Dependencies are now installed directly on the main agent
-        // using 'sudo' since it's the most common way to get permissions.
-        stage('Install Build Dependencies') {
+        // This stage now installs a few extra dependencies needed for mysqlclient.
+        stage('Install System Dependencies & Set up Python Environment') {
             steps {
                 sh '''
-                sudo apt-get update -y
-                sudo apt-get install -y default-libmysqlclient-dev pkg-config python3-dev build-essential
-                '''
-            }
-        }
-
-        stage('Set up Python environment') {
-            steps {
-                sh '''
-                    python3 -m venv "$VENV"
-                    "$VENV/bin/pip" install --upgrade pip
-                    "$VENV/bin/pip" install -r messaging_app/requirements.txt
-                    "$VENV/bin/pip" install pytest pytest-django pytest-html pytest-cov
+                apt-get update -y
+                apt-get install -y default-libmysqlclient-dev pkg-config build-essential
+                python3 -m venv "$VENV"
+                "$VENV/bin/pip" install --upgrade pip
+                "$VENV/bin/pip" install -r messaging_app/requirements.txt
+                "$VENV/bin/pip" install pytest pytest-django pytest-html pytest-cov
                 '''
             }
         }
@@ -74,8 +70,6 @@ pipeline {
             }
         }
 
-        // This stage now uses 'sh' commands to execute Docker commands,
-        // which will work because of the volume mount.
         stage('Build and Push Docker Image') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_HUB_CREDENTIALS_PSW', usernameVariable: 'DOCKER_HUB_CREDENTIALS_USER')]) {
