@@ -24,6 +24,16 @@ pipeline {
                     url: 'https://github.com/adetuyiTolu/alx-backend-python.git'
             }
         }
+        
+        // This stage installs build tools inside the Jenkins container.
+        stage('Install Build Dependencies') {
+            steps {
+                sh '''
+                apt-get update -y
+                apt-get install -y default-libmysqlclient-dev pkg-config python3-dev build-essential
+                '''
+            }
+        }
 
         stage('Set up Python environment') {
             steps {
@@ -63,14 +73,16 @@ pipeline {
             }
         }
 
+        // This stage now uses 'sh' commands to execute Docker commands,
+        // which will work because of the volume mount.
         stage('Build and Push Docker Image') {
             steps {
-                script {
-                    docker.withRegistry(env.REGISTRY_URL, 'dockerhub-credentials') {
-                        def appImage = docker.build("${IMAGE_NAME}:${BUILD_NUMBER}")
-                        appImage.push("${BUILD_NUMBER}")
-                        appImage.push("latest")
-                    }
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_HUB_CREDENTIALS_PSW', usernameVariable: 'DOCKER_HUB_CREDENTIALS_USER')]) {
+                    sh 'echo "$DOCKER_HUB_CREDENTIALS_PSW" | docker login -u "$DOCKER_HUB_CREDENTIALS_USER" --password-stdin'
+                    sh "docker build -t ${IMAGE_NAME}:${BUILD_NUMBER} ."
+                    sh "docker push ${IMAGE_NAME}:${BUILD_NUMBER}"
+                    sh "docker tag ${IMAGE_NAME}:${BUILD_NUMBER} ${IMAGE_NAME}:latest"
+                    sh "docker push ${IMAGE_NAME}:latest"
                 }
             }
         }
