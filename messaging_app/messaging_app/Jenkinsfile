@@ -25,12 +25,18 @@ pipeline {
             }
         }
         
-        // This stage now uses 'sudo' to gain the necessary permissions.
+        // This stage now uses a separate Docker image as an agent to gain the necessary permissions.
         stage('Install Build Dependencies') {
+            agent {
+                docker {
+                    image 'python:3.11-slim'
+                    args '-u root'
+                }
+            }
             steps {
                 sh '''
-                sudo apt-get update -y
-                sudo apt-get install -y default-libmysqlclient-dev pkg-config python3-dev build-essential
+                apt-get update -y
+                apt-get install -y default-libmysqlclient-dev pkg-config python3-dev build-essential
                 '''
             }
         }
